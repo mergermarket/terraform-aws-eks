@@ -50,7 +50,7 @@ resource "null_resource" "wait_for_cluster" {
 }
 
 resource "aws_security_group" "cluster" {
-  count       = var.cluster_security_group_id == "" && var.create_eks ? 1 : 0
+  count       = 0
   name_prefix = var.cluster_name
   description = "EKS cluster security group."
   vpc_id      = var.vpc_id
